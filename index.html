@@ -55,26 +55,30 @@
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
 
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-purple);
+        .logo-box {
+            width: 60px;
+            height: 60px;
+            border: 2px solid var(--primary-purple);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 12px;
-            text-align: center;
+            padding: 2px;
+        }
+
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
 
         .brand-name h1 {
             font-size: 1.2rem;
             color: var(--dark-purple);
+            text-transform: uppercase;
         }
 
         .brand-name p {
@@ -117,22 +121,25 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-            padding: 60px 0;
+            background: linear-gradient(rgba(243, 229, 245, 0.85), rgba(225, 190, 231, 0.85)), 
+                        url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 80px 0;
             text-align: center;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--dark-purple);
             margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             max-width: 800px;
             margin: 0 auto 25px auto;
-            color: #424242;
+            color: #212121;
+            font-weight: 500;
         }
 
         .badge-box {
@@ -140,16 +147,16 @@
             border-left: 5px solid var(--primary-purple);
             padding: 15px;
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 25px;
             border-radius: 0 8px 8px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: left;
         }
 
         /* Sections General */
         section {
-            padding: 60px 0;
+            padding: 70px 0;
             background-color: var(--white);
-            margin-bottom: 20px;
         }
 
         section:nth-of-type(even) {
@@ -160,7 +167,7 @@
             text-align: center;
             color: var(--dark-purple);
             margin-bottom: 40px;
-            font-size: 2rem;
+            font-size: 2.2rem;
             position: relative;
         }
 
@@ -173,25 +180,79 @@
             margin: 10px auto 0 auto;
         }
 
-        /* Grid Management */
+        /* Layout Grids */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
+        }
+
+        .image-wrapper {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Flyer Visual Banner Icons */
+        .flyer-banner {
+            background-color: #F3E5F5;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border: 1px dashed var(--primary-purple);
+        }
+
+        .flyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .flyer-item {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .flyer-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .flyer-item h5 {
+            color: var(--dark-purple);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .flyer-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         /* Table Design */
         .table-responsive {
             overflow-x: auto;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: var(--white);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
 
         th, td {
@@ -206,7 +267,7 @@
         }
 
         tr:nth-child(even) {
-            background-color: #f8f1fa;
+            background-color: #fcf8ff;
         }
 
         /* Steps Layout */
@@ -233,12 +294,7 @@
             margin-bottom: 10px;
         }
 
-        .step-card h4 {
-            margin-bottom: 10px;
-            color: var(--dark-purple);
-        }
-
-        /* Contact Section List */
+        /* Contact Section Details */
         .contact-info-list {
             list-style: none;
         }
@@ -257,8 +313,7 @@
             background-color: var(--dark-purple);
             color: var(--white);
             text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
+            padding: 40px 0;
         }
 
         /* Responsive Breakpoints */
@@ -276,20 +331,23 @@
                 grid-template-columns: 1fr;
             }
             .hero h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header & Navigation -->
     <header>
         <div class="nav-container">
             <div class="logo-area">
-                <div class="logo-placeholder">AYNAWI</div>
+                <div class="logo-box">
+                    <img src="https://images.unsplash.com/photo-1599305445671-ac2c65a59c4a?auto=format&fit=crop&w=100&q=80" alt="AYNAWI Logo Placeholder">
+                </div>
                 <div class="brand-name">
-                    <h1>AYNAWI FOREIGN EMPLOYMENT AGENT [cite: 11]</h1>
-                    <p>አይናዊ በዉጭ ሀገር ስራና ሰራተኛ አገናኝ [cite: 11]</p>
+                    <h1>AYNAWI FOREIGN EMPLOYMENT AGENT</h1>
+                    <p>አይናዊ በዉጭ ሀገር ስራና ሰራተኛ አገናኝ</p>
                 </div>
             </div>
             <nav>
@@ -304,54 +362,96 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <div class="hero">
         <div class="container">
             <h2>Connecting Trusted Ethiopian Talent with Premium Households in the Gulf</h2>
-            <p>Providing fully legal, transparent, and highly efficient recruitment pipelines for domestic staff deployments to Saudi Arabia and Kuwait[cite: 50].</p>
-            <a href="#candidates" class="btn">Job Seeker Registration</a>
+            <p>Providing fully legal, transparent, and highly efficient recruitment pipelines for domestic staff deployments to Saudi Arabia and Kuwait.</p>
+            <a href="#candidates" class="btn" style="margin-right: 10px;">Job Seeker Registration</a>
+            <a href="#employers" class="btn" style="background-color: var(--dark-purple);">Hire Staff</a>
             <br>
             <div class="badge-box">
                 <strong>📜 Government Certified Legal Operations</strong><br>
-                Operated fully in compliance with Ethiopia's Overseas Employment Proclamation No. 923/2016 and 1246/2021[cite: 5].
+                Operated fully in compliance with Ethiopia's Overseas Employment Proclamation No. 923/2016 and 1246/2021.
             </div>
         </div>
     </div>
 
+    <!-- About Agency Section -->
     <section id="about">
         <div class="container">
             <h3 class="section-title">About Our Agency</h3>
             <div class="grid-2">
                 <div>
-                    <p><strong>AYNAWI Foreign Employment Agent</strong> is a certified Private Employment Agency authorized to deliver seamless overseas human resource solutions[cite: 3, 11]. Under standard government regulatory frameworks, we bridge the gap between dedicated professionals and premium global households[cite: 3, 5].</p>
+                    <p><strong>AYNAWI Foreign Employment Agent</strong> is a certified Private Employment Agency authorized to deliver seamless overseas human resource solutions. Under standard government regulatory frameworks, we bridge the gap between dedicated professionals and premium global households.</p>
                     <br>
-                    <p>We take pride in our robust pre-departure processes, legal compliance mechanisms, and strong collaborative stance with our partner destination offices across the Gulf[cite: 22, 41].</p>
+                    <p>We take pride in our robust pre-departure processes, legal compliance mechanisms, and strong collaborative stance with our partner destination offices across the Gulf.</p>
+                    <br>
+                    <div style="background-color: #f3e5f5; padding: 20px; border-radius: 8px; border-left: 4px solid var(--dark-purple);">
+                        <h4 style="color: var(--dark-purple); margin-bottom: 5px;">Executive Management</h4>
+                        <p><strong>General Manager:</strong> Mr. TAMENE GELETA KEBEDE</p>
+                        <p><strong>Nationality:</strong> Ethiopian</p>
+                        <p><strong>Primary Markets:</strong> Kingdom of Saudi Arabia (KSA) & Kuwait</p>
+                    </div>
                 </div>
-                <div style="background-color: #eee; padding: 25px; border-radius: 8px;">
-                    <h4 style="color: var(--dark-purple); margin-bottom: 10px;">Executive Management</h4>
-                    <p><strong>General Manager:</strong> Mr. TAMENE GELETA KEBEDE [cite: 12]</p>
-                    <p><strong>Nationality:</strong> Ethiopian [cite: 10]</p>
-                    <p><strong>Primary Markets:</strong> Kingdom of Saudi Arabia (KSA) & Kuwait [cite: 26, 34]</p>
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Professional Agency Management Team">
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Employers Section -->
     <section id="employers">
         <div class="container">
             <h3 class="section-title">For Employers</h3>
             
-            <h4 style="color: var(--dark-purple); margin-bottom: 15px;">Candidate Profiles & Capabilities</h4>
-            <p style="margin-bottom: 20px;">All selected candidates match strict eligibility and vetting rules before final operational deployment[cite: 22, 44]:</p>
-            
-            <ul style="margin-left: 20px; margin-bottom: 30px;">
-                <li style="margin-bottom: 8px;"><strong>Age Eligibility:</strong> Verified to be above 21 years old[cite: 46].</li>
-                <li style="margin-bottom: 8px;"><strong>Core Skills:</strong> Thorough general housekeeping, organizing, professional laundering, and room management support[cite: 54, 55].</li>
-                <li style="margin-bottom: 8px;"><strong>Domestic Support:</strong> Basic childcare routines, elderly assistance schedules, and daily household operation tasks[cite: 52, 53].</li>
-                <li style="margin-bottom: 8px;"><strong>Adaptability:</strong> Ready to learn regional culinary practices, including Arabic or local Gulf cuisine[cite: 47].</li>
-            </ul>
+            <div class="grid-2" style="margin-bottom: 40px;">
+                <div class="image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80" alt="Professional Housekeeping Candidate">
+                </div>
+                <div>
+                    <h4 style="color: var(--dark-purple); margin-bottom: 15px;">Candidate Profiles & Capabilities</h4>
+                    <p style="margin-bottom: 20px;">All selected candidates match strict eligibility and vetting rules before final operational deployment:</p>
+                    
+                    <ul style="margin-left: 20px; margin-bottom: 20px; line-height: 1.8;">
+                        <li><strong>Age Eligibility:</strong> Verified to be above 21 years old.</li>
+                        <li><strong>Core Skills:</strong> Thorough general housekeeping, organizing, professional laundering, and room management support.</li>
+                        <li><strong>Domestic Support:</strong> Basic childcare routines, elderly assistance schedules, and daily household operation tasks.</li>
+                        <li><strong>Adaptability:</strong> Ready to learn regional culinary practices, including Arabic or local Gulf cuisine.</li>
+                    </ul>
+                </div>
+            </div>
 
-            <h4 style="color: var(--dark-purple); margin-bottom: 15px;">Legal Framework & Contractual Terms</h4>
-            <p>Placements operate strictly within the unified contracts designated by destination labor laws[cite: 25, 36]:</p>
+            <!-- Flyer Feature Highlights -->
+            <div class="flyer-banner">
+                <h4 style="text-align: center; color: var(--dark-purple); margin-bottom: 20px;">Guaranteed Core Candidate Qualities</h4>
+                <div class="flyer-grid">
+                    <div class="flyer-item">
+                        <span class="flyer-icon">💰</span>
+                        <h5>Good Salary / ጥሩ ደሞዝ</h5>
+                        <p>Highly competitive market rates</p>
+                    </div>
+                    <div class="flyer-item">
+                        <span class="flyer-icon">🪪</span>
+                        <h5>Residence Visa / የቪዛ ፈቃድ</h5>
+                        <p>Fully legal structural residency</p>
+                    </div>
+                    <div class="flyer-item">
+                        <span class="flyer-icon">📅</span>
+                        <h5>One Day Off / በሳምንት አንድ ቀን</h5>
+                        <p>24 continuous hours weekly rest</p>
+                    </div>
+                    <div class="flyer-item">
+                        <span class="flyer-icon">🛡️</span>
+                        <h5>Safe Environment / ሰላማዊ አካባቢ</h5>
+                        <p>Respectful work culture</p>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="color: var(--dark-purple); margin-top: 40px; margin-bottom: 15px;">Legal Framework & Contractual Terms</h4>
+            <p>Placements operate strictly within the unified contracts designated by destination labor laws:</p>
 
             <div class="table-responsive">
                 <table>
@@ -365,38 +465,38 @@
                     <tbody>
                         <tr>
                             <td><strong>Standard Salary Structure</strong></td>
-                            <td>SAR 1,000 to SAR 1,200 monthly [cite: 26]</td>
-                            <td>KWD 100 to KWD 110 monthly [cite: 37]</td>
+                            <td>SAR 1,000 to SAR 1,200 monthly</td>
+                            <td>KWD 100 to KWD 110 monthly</td>
                         </tr>
                         <tr>
                             <td><strong>Financial Protection</strong></td>
-                            <td>Registered via Wage Protection System (WPS) [cite: 27]</td>
-                            <td>Legally overseen by Public Authority for Manpower (PAM) [cite: 35]</td>
+                            <td>Registered via Wage Protection System (WPS)</td>
+                            <td>Legally overseen by Public Authority for Manpower (PAM)</td>
                         </tr>
                         <tr>
                             <td><strong>Working & Rest Hours</strong></td>
-                            <td>Max 10 hours/day; 30-min break after 5 hours [cite: 28, 29]</td>
-                            <td>Guaranteed standard daily and weekly rest periods [cite: 40]</td>
+                            <td>Max 10 hours/day; 30-min break after 5 hours</td>
+                            <td>Guaranteed standard daily and weekly rest periods</td>
                         </tr>
                         <tr>
                             <td><strong>Weekly Rest Rights</strong></td>
-                            <td>1 full day off per week (24 continuous hours) paid [cite: 30]</td>
-                            <td>1 full day of paid weekly rest [cite: 40]</td>
+                            <td>1 full day off per week (24 continuous hours) paid</td>
+                            <td>1 full day of paid weekly rest</td>
                         </tr>
                         <tr>
                             <td><strong>Guarantee / Probation</strong></td>
-                            <td>Up to 90 days (Refund/replacement via Musaned) [cite: 31, 32]</td>
-                            <td>6-month mandatory agency guarantee period [cite: 41]</td>
+                            <td>Up to 90 days (Refund/replacement via Musaned)</td>
+                            <td>6-month mandatory agency guarantee period</td>
                         </tr>
                         <tr>
                             <td><strong>Basic Amenities Provided</strong></td>
-                            <td>Free food, medical insurance, and accommodation [cite: 48]</td>
-                            <td>Decent living quarters, food, medical care [cite: 43]</td>
+                            <td>Free food, medical insurance, and accommodation</td>
+                            <td>Decent living quarters, food, medical care</td>
                         </tr>
                         <tr>
                             <td><strong>Term Completion Benefits</strong></td>
-                            <td>Paid sick leave; mandatory return flight ticket [cite: 33]</td>
-                            <td>End-of-service indemnity (1 month wage/year); return ticket [cite: 39, 43]</td>
+                            <td>Paid sick leave; mandatory return flight ticket</td>
+                            <td>End-of-service indemnity (1 month wage/year); return ticket</td>
                         </tr>
                     </tbody>
                 </table>
@@ -404,36 +504,38 @@
         </div>
     </section>
 
+    <!-- Candidates Section -->
     <section id="candidates">
         <div class="container">
             <h3 class="section-title">For Job Seekers (Candidates)</h3>
-            <p style="text-align: center; margin-bottom: 30px;">Our structured deployment process ensures safe, secure, and completely legal paths to employment overseas[cite: 22]:</p>
+            <p style="text-align: center; margin-bottom: 40px;">Our structured deployment process ensures safe, secure, and completely legal paths to employment overseas:</p>
             
             <div class="steps-container">
                 <div class="step-card">
                     <div class="step-number">01</div>
                     <h4>Online Registration</h4>
-                    <p>Submit your CV, valid passport copy, and basic trade credentials securely through our system[cite: 22].</p>
+                    <p>Submit your CV, valid passport copy, and basic trade credentials securely through our system.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">02</div>
                     <h4>Vetting & Interviewing</h4>
-                    <p>Our processing specialists conduct initial screening, background verifications, and skills evaluation[cite: 22].</p>
+                    <p>Our processing specialists conduct initial screening, background verifications, and skills evaluation.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">03</div>
                     <h4>Visa Processing</h4>
-                    <p>We completely handle required medical clearances, legal contract formatting, and embassy processing[cite: 22].</p>
+                    <p>We completely handle required medical clearances, legal contract formatting, and embassy processing.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">04</div>
                     <h4>Pre-Departure Briefing</h4>
-                    <p>Receive comprehensive education on destination culture, workplace laws, and structural expectations[cite: 22].</p>
+                    <p>Receive comprehensive education on destination culture, workplace laws, and structural expectations.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <h3 class="section-title">Contact Our Office</h3>
@@ -441,16 +543,20 @@
                 <div>
                     <h4 style="color: var(--dark-purple); margin-bottom: 15px;">Business Footprint</h4>
                     <ul class="contact-info-list">
-                        <li><strong>Region/City:</strong> Addis Ababa, Ethiopia [cite: 14]</li>
-                        <li><strong>Sub City/Woreda:</strong> Arada, Woreda 02 [cite: 14, 15]</li>
-                        <li><strong>House Number:</strong> 399/101/ሰ [cite: 16]</li>
-                        <li><strong>Phone Number:</strong> +251 926 689 442 (Calls & WhatsApp) [cite: 16, 21]</li>
-                        <li><strong>Official Email:</strong> aynawiagency2024@gmail.com [cite: 21]</li>
+                        <li><strong>Region/City:</strong> Arada, Addis Ababa, Ethiopia</li>
+                        <li><strong>Sub City/Woreda:</strong> Woreda 02</li>
+                        <li><strong>House Number:</strong> 399/101/ሰ</li>
+                        <li><strong>Phone Number:</strong> +251 926 689 442 (Calls & WhatsApp)</li>
+                        <li><strong>Official Email:</strong> aynawiagency2024@gmail.com</li>
                     </ul>
+                    <br>
+                    <div class="image-wrapper" style="box-shadow: none; border: 1px solid var(--border-color);">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=600&q=80" alt="Addis Ababa Office Location Reference">
+                    </div>
                 </div>
                 <div>
                     <h4 style="color: var(--dark-purple); margin-bottom: 15px;">Inquire Online</h4>
-                    <form style="display: flex; flex-direction: column; gap: 15px;">
+                    <form style="display: flex; flex-direction: column; gap: 15px; background: var(--white); padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                         <input type="text" placeholder="Your Full Name" style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;" required>
                         <input type="email" placeholder="Your Email Address" style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;" required>
                         <select style="padding: 12px; border: 1px solid var(--border-color); border-radius: 4px;">
@@ -465,10 +571,11 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 AYNAWI Foreign Employment Agent. All Rights Reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Licensed in accordance with Ethiopian Overseas Employment Proclamation No. 923/2016 & 1246/2021[cite: 5].</p>
+            <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.8;">Licensed in accordance with Ethiopian Overseas Employment Proclamation No. 923/2016 & 1246/2021.</p>
         </div>
     </footer>
 
